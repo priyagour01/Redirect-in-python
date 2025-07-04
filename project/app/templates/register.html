@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Registration_page
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css'%}">
+{% endblock  %}
+
+{% block content %}
+<h1>This is Registration Page Data</h1>
+
+<a href="{% url 'register' %}">Registration Form</a>
+<form action="" method="get">
+    <button type="submit">Login</button>
+</form>
+
+{% if register %}
+This Is Registration Page
+<form action="{% url 'registerdata' %}" method="post">
+    {% comment %} {% csrf %} {% endcomment %}
+   Name: <input type="text" name="name" id=""> <br> <br>
+   Email: <input type="email" name="email" id=""> <br> <br>
+   Contact: <input type="number" name="number" id=""> <br> <br>
+   Image: <input type="file" name="image" id=""> <br> <br>
+   Document: <input type="file" name="file" id=""> <br> <br>
+   <input type="submit" value="register">
+</form>
+{% endif %}
+
+
+
+
+
+
+
+{% endblock  %}
